@@ -1,0 +1,15 @@
+# Python
+__pycache__/
+*.pyc
+
+# Environments
+.env
+.venv/
+env/
+
+# OS
+.DS_Store
+
+# Conda
+*.conda
+
