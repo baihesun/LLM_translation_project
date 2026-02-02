@@ -1,0 +1,114 @@
+[
+  {
+    "id": "ind:fda.verzenio:0",
+    "document_id": "doc:fda.verzenio",
+    "indication": "Verzenio es un inhibidor de quinasas indicado en combinación con terapia endocrina (tamoxifeno o un inhibidor de aromatasa) para el tratamiento adyuvante de pacientes adultos con cáncer de mama temprano, receptor hormonal (HR)-positivo, receptor del factor de crecimiento epidérmico humano 2 (HER2)-negativo, con ganglios linfáticos positivos y alto riesgo de recurrencia.",
+    "initial_approval_date": "2023-03-03",
+    "initial_approval_url": "https://www.accessdata.fda.gov/drugsatfda_docs/label/2023/208716s010s011lbl.pdf",
+    "description": "La Administración de Alimentos y Medicamentos de los Estados Unidos (FDA) otorgó la aprobación a abemaciclib en combinación con terapia endocrina (tamoxifeno o un inhibidor de aromatasa) para el tratamiento adyuvante de pacientes adultos con cáncer de mama temprano, receptor hormonal positivo (RH+), factor de crecimiento epidérmico humano 2 (HER2)-negativo, con ganglios linfáticos positivos y alto riesgo de recurrencia. Esta indicación se basa en el ensayo clínico monarchE (NCT03155997), que fue un estudio multicéntrico aleatorizado (1:1), de dos cohortes y abierto. La terapia endocrina inicial recibida por los pacientes incluyó letrozol (39%), tamoxifeno (31%), anastrozol (22%) o exemestano (8%).",
+    "raw_biomarkers": "HR+, HER2-negative",
+    "raw_cancer_type": "early breast cancer",
+    "raw_therapeutics": "Verzenio (abemaciclib) in combination with endocrine therapy (tamoxifen or an aromatase inhibitor)"
+  },
+  {
+    "id": "ind:fda.verzenio:1",
+    "document_id": "doc:fda.verzenio",
+    "indication": "Verzenio es un inhibidor de quinasa indicado en combinación con un inhibidor de aromatasa como terapia endocrina inicial para el tratamiento de pacientes adultos con cáncer de mama avanzado o metastásico positivo para el receptor hormonal (HR), negativo para el receptor 2 del factor de crecimiento epidérmico humano (HER2).",
+    "initial_approval_date": "2018-08-17",
+    "initial_approval_url": "https://www.accessdata.fda.gov/drugsatfda_docs/label/2018/208716s001lbl.pdf",
+    "description": "La Administración de Alimentos y Medicamentos de los Estados Unidos (FDA) otorgó la aprobación a abemaciclib en combinación con un inhibidor de aromatasa como terapia endocrina inicial para el tratamiento de pacientes adultos con cáncer de mama avanzado o metastásico positivo para receptores hormonales (HR) y negativo para el factor de crecimiento epidérmico humano 2 (HER2). Esta indicación se basa en el ensayo clínico MONARCH 3 (NCT02246621), que fue un estudio multicéntrico aleatorizado (2:1), doble ciego y controlado con placebo. Un total de 493 pacientes fueron aleatorizados para recibir 150 mg de abemaciclib o placebo por vía oral dos veces al día, más la elección del médico de letrozol (80% de los pacientes) o anastrozol (20%).",
+    "raw_biomarkers": "HR+, HER2-negative",
+    "raw_cancer_type": "advanced or metastatic breast cancer",
+    "raw_therapeutics": "Verzenio (abemaciclib) in combination with an aromatase inhibitor"
+  },
+  {
+    "id": "ind:fda.verzenio:2",
+    "document_id": "doc:fda.verzenio",
+    "indication": "Verzenio es un inhibidor de la quinasa indicado en combinación con fulvestrant para el tratamiento de pacientes adultos con cáncer de mama avanzado o metastásico positivo para receptores hormonales (RH) y negativo para el receptor 2 del factor de crecimiento epidérmico humano (HER2) con progresión de la enfermedad tras la terapia endocrina.",
+    "initial_approval_date": "2017-09-28",
+    "initial_approval_url": "https://www.accessdata.fda.gov/drugsatfda_docs/label/2017/208716Orig1s000lbl.pdf",
+    "description": "La Administración de Alimentos y Medicamentos de los Estados Unidos (FDA) otorgó la aprobación a abemaciclib en combinación con fulvestrant para el tratamiento de pacientes adultos con cáncer de mama avanzado o metastásico positivo para receptores hormonales (HR), negativo para el factor de crecimiento epidérmico humano 2 (HER2) con progresión de la enfermedad después de la terapia endocrina.",
+    "raw_biomarkers": "HR+, HER2-negative",
+    "raw_cancer_type": "advanced or metastatic breast cancer",
+    "raw_therapeutics": "Verzenio (abemaciclib) in combination with fulvestrant"
+  },
+  {
+    "id": "ind:fda.verzenio:3",
+    "document_id": "doc:fda.verzenio",
+    "indication": "Verzenio es un inhibidor de la quinasa indicado como monoterapia para el tratamiento de pacientes adultos con cáncer de mama avanzado o metastásico positivo para HR, negativo para HER2, con progresión de la enfermedad después de la terapia endocrina y quimioterapia previa en el entorno metastásico.",
+    "initial_approval_date": "2017-09-28",
+    "initial_approval_url": "https://www.accessdata.fda.gov/drugsatfda_docs/label/2017/208716Orig1s000lbl.pdf",
+    "description": "La Administración de Alimentos y Medicamentos de los Estados Unidos (FDA) otorgó la aprobación a abemaciclib para el tratamiento de pacientes adultos con cáncer de mama avanzado o metastásico positivo para receptores hormonales (HR), negativo para el factor de crecimiento epidérmico humano 2 (HER2), con progresión de la enfermedad después de la terapia endocrina y quimioterapia previa en el entorno metastásico.",
+    "raw_biomarkers": "HR+, HER2-negative",
+    "raw_cancer_type": "advanced or metastatic breast cancer",
+    "raw_therapeutics": "Verzenio (abemaciclib)"
+  },
+  {
+    "id": "ind:fda.akeega:0",
+    "document_id": "doc:fda.akeega",
+    "indication": "AKEEGA es una combinación de niraparib, un inhibidor de la poli (ADP-ribosa) polimerasa (PARP), y acetato de abiraterona, un inhibidor de CYP17 indicado con prednisona para el tratamiento de pacientes adultos con cáncer de próstata resistente a la castración metastásico (mCRPC) con mutaciones deletereas o sospechadas de BRCA (BRCAm). Seleccione a los pacientes para la terapia basándose en una prueba aprobada por la FDA para AKEEGA.",
+    "initial_approval_date": "2018-08-11",
+    "initial_approval_url": "https://www.accessdata.fda.gov/drugsatfda_docs/label/2023/216793s000lbl.pdf",
+    "description": "La Administración de Alimentos y Medicamentos de los Estados Unidos (FDA) otorgó la aprobación a Akeega (acetato de abiraterona con niraparib) en combinación con prednisona para el tratamiento de pacientes adultos con cáncer de próstata resistente a la castración metastásico (mCRPC) con mutaciones deletéreas o sospechosas en BRCA (BRCAm). Los pacientes deben ser seleccionados para la terapia en base a una prueba aprobada por la FDA para Akeega.",
+    "raw_biomarkers": "deleterious or suspected deleterious BRCA-mutated (BRCAm)",
+    "raw_cancer_type": "metastatic castration-resistant prostate cancer",
+    "raw_therapeutics": "Akeega (abiraterone acetate and niraparib) in combination with prednisone"
+  },
+  {
+    "id": "ind:fda.krazati:0",
+    "document_id": "doc:fda.krazati",
+    "indication": "KRAZATI es un inhibidor de la familia de GTPasas RAS indicado para el tratamiento de pacientes adultos con cáncer de pulmón no microcítico (NSCLC) localmente avanzado o metastásico con mutación KRAS G12C, según lo determinado por una prueba aprobada por la FDA, que hayan recibido al menos una terapia sistémica previa. Esta indicación está aprobada bajo aprobación acelerada basada en la tasa de respuesta objetiva (ORR) y la duración de la respuesta (DOR). La aprobación continua para esta indicación puede estar sujeta a la verificación y descripción de un beneficio clínico en un ensayo confirmatorio.",
+    "initial_approval_date": "2022-12-12",
+    "initial_approval_url": "https://www.accessdata.fda.gov/drugsatfda_docs/label/2022/216340Orig1s000Corrected_lbl.pdf",
+    "description": "La Administración de Alimentos y Medicamentos de los Estados Unidos otorgó la aprobación acelerada a adagrasib para el tratamiento de pacientes adultos con cáncer de pulmón no microcítico localmente avanzado o metastásico con mutación KRAS G12C, según lo determinado por una prueba aprobada por la FDA, que hayan recibido al menos una terapia sistémica previa. La etiqueta del producto señala que esta indicación está aprobada bajo aprobación acelerada basada en la tasa de respuesta objetiva (ORR) y la duración de la respuesta (DOR), y que la aprobación continua para esta indicación puede depender de la verificación y descripción de un beneficio clínico en un ensayo confirmatorio.",
+    "raw_biomarkers": "KRAS G12C",
+    "raw_cancer_type": "locally advanced or metastatic non-small cell lung cancer",
+    "raw_therapeutics": "Krazati (adagrasib)",
+    "date_regular_approval": null,
+    "date_accelerated_approval": "2022-12-20"
+  },
+  {
+    "id": "ind:fda.kadcyla:0",
+    "document_id": "doc:fda.kadcyla",
+    "indication": "KADCYLA es un anticuerpo dirigido contra HER2 e inhibidor de microtúbulos conjugado indicado, como agente único, para el tratamiento de pacientes con cáncer de mama metastásico HER2 positivo que previamente recibieron trastuzumab y un taxano, ya sea por separado o en combinación. Los pacientes deben haber recibido previamente terapia para la enfermedad metastásica; o haber desarrollado recurrencia de la enfermedad durante o dentro de los seis meses posteriores a completar la terapia adyuvante. Seleccione a los pacientes para la terapia en base a un diagnóstico complementario aprobado por la FDA para KADCYLA.",
+    "initial_approval_date": "2013-02-22",
+    "initial_approval_url": "https://www.accessdata.fda.gov/drugsatfda_docs/label/2013/125427lbl.pdf",
+    "description": "La Administración de Alimentos y Medicamentos de los Estados Unidos otorgó la aprobación a ado-trastuzumab emtansine.",
+    "raw_biomarkers": "HER2-positive",
+    "raw_cancer_type": "metastatic breast cancer",
+    "raw_therapeutics": "Kadcyla (ado-trastuzumab emtansine)"
+  },
+  {
+    "id": "ind:fda.kadcyla:1",
+    "document_id": "doc:fda.kadcyla",
+    "indication": "KADCYLA es un anticuerpo dirigido contra HER2 e inhibidor de microtúbulos conjugado indicado, como agente único, para el tratamiento adyuvante de pacientes con cáncer de mama temprano HER2 positivo que tienen enfermedad invasiva residual después del tratamiento neoadyuvante basado en taxanos y trastuzumab. Seleccione a los pacientes para la terapia en base a un diagnóstico complementario aprobado por la FDA para KADCYLA.",
+    "initial_approval_date": "2019-05-03",
+    "initial_approval_url": "https://www.accessdata.fda.gov/drugsatfda_docs/label/2019/125427s105lbl.pdf",
+    "description": "La Administración de Alimentos y Medicamentos de los Estados Unidos otorgó la aprobación a ado-trastuzumab emtansine para el tratamiento adyuvante de pacientes con cáncer de mama temprano HER2-positivo que tienen enfermedad invasiva residual después de un tratamiento neoadyuvante basado en taxanos y trastuzumab. La etiqueta del producto indica seleccionar a los pacientes para la terapia basándose en un diagnóstico complementario aprobado por la FDA para ado-trastuzumab emtansine.",
+    "raw_biomarkers": "HER2-positive",
+    "raw_cancer_type": "early breast cancer",
+    "raw_therapeutics": "Kadcyla (ado-trastuzumab emtansine)"
+  },
+  {
+    "id": "ind:fda.gilotrif:0",
+    "document_id": "doc:fda.gilotrif",
+    "indication": "GILOTRIF es un inhibidor de quinasas indicado para el tratamiento de primera línea de pacientes con cáncer de pulmón no microcítico metastásico (CPNM) cuyos tumores tienen mutaciones no resistentes del receptor del factor de crecimiento epidérmico (EGFR), según lo detectado por una prueba aprobada por la FDA. Limitaciones de uso: La seguridad y eficacia de GILOTRIF no se establecieron en pacientes cuyos tumores tienen mutaciones resistentes del EGFR.",
+    "initial_approval_date": "2018-01-12",
+    "initial_approval_url": "https://www.accessdata.fda.gov/drugsatfda_docs/label/2018/201292s014lbl.pdf",
+    "description": "La Administración de Alimentos y Medicamentos de los Estados Unidos otorgó la aprobación a afatinib para el tratamiento de primera línea de pacientes con cáncer de pulmón no microcítico (NSCLC) metastásico cuyos tumores tienen mutaciones no resistentes del receptor del factor de crecimiento epidérmico (EGFR), según lo detectado por una prueba aprobada por la FDA.",
+    "raw_biomarkers": "non-resistant EGFR mutations",
+    "raw_cancer_type": "metastatic non-small cell lung cancer",
+    "raw_therapeutics": "Gilotrif (afatinib)"
+  },
+  {
+    "id": "ind:fda.alecensa:0",
+    "document_id": "doc:fda.alecensa",
+    "indication": "ALECENSA es un inhibidor de la quinasa indicado para el tratamiento adyuvante en pacientes adultos después de la resección del tumor de cáncer de pulmón no microcítico (CPNM) positivo para la quinasa de linfoma anaplásico (ALK) (tumores >= 4 cm o positivos en ganglios) detectados por una prueba aprobada por la FDA.",
+    "initial_approval_date": "2024-04-18",
+    "initial_approval_url": "https://www.accessdata.fda.gov/drugsatfda_docs/label/2024/208434s015lbl.pdf",
+    "description": "La Administración de Alimentos y Medicamentos de los Estados Unidos otorgó la aprobación a alectinib para el tratamiento adyuvante de pacientes adultos, tras la resección del tumor, con cáncer de pulmón no microcítico (CPNM) positivo para quinasa de linfoma anaplásico (ALK) (tumores >= 4 cm o con ganglios positivos), detectado mediante una prueba aprobada por la FDA.",
+    "raw_biomarkers": "ALK-positive",
+    "raw_cancer_type": "non-small cell lung cancer",
+    "raw_therapeutics": "Alecensa (alectinib)"
+  }
+]

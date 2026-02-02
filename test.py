@@ -4,109 +4,138 @@ import time
 import sys
 from openai import OpenAI
 
-"""
-to-dos: 
-- understand the hyperparam fields and test different settings
-- expand to more fields if needed
-- allow flexibility for models 
-"""
-
-# configuration
+# CONFIGURATION
 INDICATIONS_PATH = "/Users/baihesun/moalmanac-db/referenced/indications.json"
 OUTPUT_DIR = "/Users/baihesun/Desktop/python/LLM_translation_project/results/"
 LANGUAGE = "Spanish"
-OUTPUT_NAME = f"indications_{LANGUAGE}.json"
-MODEL = "gpt-3.5-turbo"
+MODEL_PROVIDER = "openai"  # Options: "openai", "claude", "gemini", "translategemma"
 TEMPERATURE = 0.3
-TEST_SIZE = 10  # set to None to translate all entries
+TEST_SIZE = 10
 
 
-def translate_field(client, text, language, model, temperature):
-    response = client.chat.completions.create(
-        messages=[{
+
+MODEL_CONFIGS = {
+    "openai": {"model": "gpt-3.5-turbo", "api_key_env": "OPENAI_API_KEY"},
+    "claude": {"model": "claude-sonnet-4-5-20250929", "api_key_env": "ANTHROPIC_API_KEY"},
+    "gemini": {"model": "gemini-2.5-flash-lite", "api_key_env": "GOOGLE_API_KEY"},
+    "translategemma": {"model": "google/translategemma-4b-it", "api_key_env": "HF_TOKEN"}
+}
+
+
+def get_client(provider, config):
+    api_key = os.environ.get(config["api_key_env"])
+
+    if provider != "translategemma" and not api_key:
+        raise ValueError(f"Set {config['api_key_env']} environment variable")
+
+    if provider == "openai":
+        return OpenAI(api_key=api_key)
+
+    elif provider == "claude":
+        import anthropic
+        return anthropic.Anthropic(api_key=api_key)
+
+    elif provider == "gemini":
+        import google.generativeai as genai
+        genai.configure(api_key=api_key)
+        return genai.GenerativeModel(config["model"])
+
+    elif provider == "translategemma":
+        from transformers import pipeline
+        import torch
+
+        if torch.cuda.is_available():
+            device, dtype = "cuda", torch.bfloat16
+        elif torch.backends.mps.is_available():
+            device, dtype = "mps", torch.float32
+        else:
+            device, dtype = "cpu", torch.float32
+
+        print(f"TranslateGemma: {device}, {dtype}")
+        return pipeline("image-text-to-text", model=config["model"], device=device, dtype=dtype, token=api_key)
+
+
+def translate_field(client, text, language, provider, model, temperature):
+    if provider == "translategemma":
+        lang_codes = {"Spanish": "es", "French": "fr", "English": "en"}
+        target = lang_codes.get(language, "es")
+        messages = [{
             "role": "user",
-            "content": f"Translate the following medical text into {language}:\n\n{text}"
-        }],
-        model=model,
-        temperature=temperature
-    )
-    return response.choices[0].message.content
+            "content": [{
+                "type": "text",
+                "source_lang_code": "en",
+                "target_lang_code": target,
+                "text": text
+            }]
+        }]
+        output = client(text=messages, max_new_tokens=1024, generate_kwargs={"do_sample": False})
+        return output[0]["generated_text"][-1]["content"]
+
+    prompt = f"Translate the following medical text into {language}:\n\n{text}"
+
+    if provider == "openai":
+        return client.chat.completions.create(
+            messages=[{"role": "user", "content": prompt}],
+            model=model, temperature=temperature
+        ).choices[0].message.content
+
+    elif provider == "claude":
+        return client.messages.create(
+            model=model, max_tokens=1024, temperature=temperature,
+            messages=[{"role": "user", "content": prompt}]
+        ).content[0].text
+
+    elif provider == "gemini":
+        return client.generate_content(
+            prompt,
+            generation_config={"temperature": temperature, "max_output_tokens": 1024}
+        ).text
 
 
-def translate_entry(client, entry, language, model, temperature):
-    """translate indication and description fields in an entry.--> edit later to include more fields? """
-    translated_entry = entry.copy()
-
-    if 'indication' in entry and entry['indication']:
-        translated_entry['indication'] = translate_field(
-            client, entry['indication'], language, model, temperature
-        )
-    if 'description' in entry and entry['description']:
-        translated_entry['description'] = translate_field(
-            client, entry['description'], language, model, temperature
-        )
-    return translated_entry
-
-
-def print_progress(idx, total, start_time):
-    """print progress bar with time estimates."""
-    elapsed = time.time() - start_time
-    avg_time = elapsed / (idx + 1)
-    remaining = avg_time * (total - idx - 1)
-    percent = ((idx + 1) / total) * 100
-
-    sys.stdout.write(
-        f"\rProgress: {idx + 1}/{total} ({percent:.1f}%) | "
-        f"Elapsed: {elapsed:.0f}s | Remaining: {remaining:.0f}s"
-    )
-    sys.stdout.flush()
+def translate_entry(client, entry, language, provider, model, temperature):
+    translated = entry.copy()
+    if entry.get('indication'):
+        translated['indication'] = translate_field(client, entry['indication'], language, provider, model, temperature)
+    if entry.get('description'):
+        translated['description'] = translate_field(client, entry['description'], language, provider, model, temperature)
+    return translated
 
 
 def main():
-    # setup output directory
     os.makedirs(OUTPUT_DIR, exist_ok=True)
+    config = MODEL_CONFIGS[MODEL_PROVIDER]
 
-    # initialize openai client
-    client = OpenAI(api_key=os.environ.get("OPENAI_API_KEY"))
+    print(f"Initializing {MODEL_PROVIDER} ({config['model']})...")
+    client = get_client(MODEL_PROVIDER, config)
 
-    # load data
-    print("Loading indications data...")
     with open(INDICATIONS_PATH, 'r') as f:
-        indications_data = json.load(f)
+        data = json.load(f)
 
-    # use subset for testing if specified
     if TEST_SIZE:
-        indications_data = indications_data[:TEST_SIZE]
-        OUTPUT_NAME = f"indications_{LANGUAGE}_test_{TEST_SIZE}.json"
+        data = data[:TEST_SIZE]
 
-    print(f"Found {len(indications_data)} entries to translate\n")
+    print(f"Translating {len(data)} entries to {LANGUAGE}...\n")
 
-    # translate all entries
-    start_time = time.time()
-    translated_data = []
+    start = time.time()
+    translated = []
 
-    for idx, entry in enumerate(indications_data):
-        translated_entry = translate_entry(client, entry, LANGUAGE, MODEL, TEMPERATURE)
-        translated_data.append(translated_entry)
-        print_progress(idx, len(indications_data), start_time)
+    for i, entry in enumerate(data):
+        translated.append(translate_entry(client, entry, LANGUAGE, MODEL_PROVIDER, config['model'], TEMPERATURE))
+        elapsed = time.time() - start
+        remaining = (elapsed / (i + 1)) * (len(data) - i - 1)
+        sys.stdout.write(f"\r{i+1}/{len(data)} ({100*(i+1)/len(data):.1f}%) | {elapsed:.0f}s elapsed | {remaining:.0f}s remaining")
+        sys.stdout.flush()
 
-    # save results
-    output_path = os.path.join(OUTPUT_DIR, OUTPUT_NAME)
-    print(f"\n\nSaving translated data to {output_path}...")
-    with open(output_path, 'w') as f:
-        json.dump(translated_data, f, indent=2, ensure_ascii=False)
+    suffix = f"_test_{TEST_SIZE}" if TEST_SIZE else ""
+    output = os.path.join(OUTPUT_DIR, f"indications_{LANGUAGE}_{MODEL_PROVIDER}{suffix}.json")
 
-    # print summary
-    total_time = time.time() - start_time
-    print(f"\n{'='*60}")
-    print("Translation complete!")
-    print(f"Total entries: {len(indications_data)}")
-    print(f"Total runtime: {total_time:.2f}s ({total_time/60:.2f} min)")
-    print(f"Average time per entry: {total_time/len(indications_data):.2f}s")
-    print(f"Output saved to: {output_path}")
-    print(f"{'='*60}")
+    with open(output, 'w') as f:
+        json.dump(translated, f, indent=2, ensure_ascii=False)
+
+    total = time.time() - start
+    print(f"\n\nDone! {len(data)} entries in {total:.1f}s ({total/len(data):.2f}s/entry)")
+    print(f"Saved to: {output}")
+
 
 if __name__ == "__main__":
     main()
-
-
