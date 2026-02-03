@@ -1,0 +1,57 @@
+[
+  {
+    "id": "ind:fda.verzenio:0",
+    "document_id": "doc:fda.verzenio",
+    "indication": "Verzenio es un inhibidor de quinasas indicado, en combinación con terapia endocrina (tamoxifeno o un inhibidor de la aromatasa), para el tratamiento adyuvante de pacientes adultos con cáncer de mama en etapa temprana, con receptores hormonales (RH) positivos, receptor del factor de crecimiento epidérmico humano 2 (HER2) negativo, ganglios linfáticos positivos y con un alto riesgo de recurrencia.",
+    "initial_approval_date": "2023-03-03",
+    "initial_approval_url": "https://www.accessdata.fda.gov/drugsatfda_docs/label/2023/208716s010s011lbl.pdf",
+    "description": "La Administración de Alimentos y Medicamentos de los Estados Unidos (FDA) ha aprobado abemaciclib en combinación con terapia endocrina (tamoxifeno o un inhibidor de la aromatasa) para el tratamiento adyuvante de pacientes adultos con cáncer de mama en etapa temprana, con receptores hormonales (RH) positivos, factor de crecimiento epidérmico humano 2 (HER2) negativos, ganglios linfáticos positivos y con un alto riesgo de recurrencia. Esta indicación se basa en el ensayo clínico monarchE (NCT03155997), que fue un estudio multicéntrico, aleatorizado (1:1), de diseño abierto y con dos grupos de pacientes. La terapia endocrina inicial administrada a los pacientes incluyó letrozol (39%), tamoxifeno (31%), anastrozol (22%) o exemestano (8%).",
+    "raw_biomarkers": "HR+, HER2-negative",
+    "raw_cancer_type": "early breast cancer",
+    "raw_therapeutics": "Verzenio (abemaciclib) in combination with endocrine therapy (tamoxifen or an aromatase inhibitor)"
+  },
+  {
+    "id": "ind:fda.verzenio:1",
+    "document_id": "doc:fda.verzenio",
+    "indication": "Verzenio es un inhibidor de la cinasa, indicado en combinación con un inhibidor de la aromatasa como terapia endocrina inicial para el tratamiento de pacientes adultos con cáncer de mama avanzado o metastásico, positivo para los receptores hormonales (RH) y negativo para el receptor 2 del factor de crecimiento epidérmico humano (HER2).",
+    "initial_approval_date": "2018-08-17",
+    "initial_approval_url": "https://www.accessdata.fda.gov/drugsatfda_docs/label/2018/208716s001lbl.pdf",
+    "description": "La Administración de Alimentos y Medicamentos de los Estados Unidos (FDA) ha aprobado abemaciclib en combinación con un inhibidor de la aromatasa como terapia endocrina inicial para el tratamiento de pacientes adultos con cáncer de mama avanzado o metastásico, positivo para los receptores hormonales (HR) y negativo para el factor de crecimiento epidérmico humano 2 (HER2). Esta indicación se basa en el ensayo clínico MONARCH 3 (NCT02246621), que fue un estudio multicéntrico, aleatorizado (2:1), doble ciego y controlado con placebo. Un total de 493 pacientes fueron asignados aleatoriamente para recibir 150 mg de abemaciclib o placebo por vía oral dos veces al día, además de letrozol (80% de los pacientes) o anastrozol (20%), según la elección del médico.",
+    "raw_biomarkers": "HR+, HER2-negative",
+    "raw_cancer_type": "advanced or metastatic breast cancer",
+    "raw_therapeutics": "Verzenio (abemaciclib) in combination with an aromatase inhibitor"
+  },
+  {
+    "id": "ind:fda.verzenio:2",
+    "document_id": "doc:fda.verzenio",
+    "indication": "Verzenio es un inhibidor de quinasas indicado, en combinación con fulvestrant, para el tratamiento de pacientes adultos con cáncer de mama avanzado o metastásico, que es positivo para los receptores hormonales (RH), negativo para el receptor 2 del factor de crecimiento epidérmico humano (HER2), y que presenta progresión de la enfermedad después de la terapia endocrina.",
+    "initial_approval_date": "2017-09-28",
+    "initial_approval_url": "https://www.accessdata.fda.gov/drugsatfda_docs/label/2017/208716Orig1s000lbl.pdf",
+    "description": "La Administración de Alimentos y Medicamentos de los Estados Unidos (FDA) ha concedido la aprobación de abemaciclib en combinación con fulvestrant para el tratamiento de pacientes adultos con cáncer de mama avanzado o metastásico, positivo para los receptores hormonales (RH), negativo para el factor de crecimiento epidérmico humano 2 (HER2), y que presentan progresión de la enfermedad después de la terapia endocrina.",
+    "raw_biomarkers": "HR+, HER2-negative",
+    "raw_cancer_type": "advanced or metastatic breast cancer",
+    "raw_therapeutics": "Verzenio (abemaciclib) in combination with fulvestrant"
+  },
+  {
+    "id": "ind:fda.verzenio:3",
+    "document_id": "doc:fda.verzenio",
+    "indication": "Verzenio es un inhibidor de la quinasa indicado como monoterapia para el tratamiento de pacientes adultos con cáncer de mama avanzado o metastásico, que presentan receptores hormonales positivos, HER2 negativos, y que presentan progresión de la enfermedad tras la terapia endocrina y la quimioterapia previa en el contexto de enfermedad metastásica.",
+    "initial_approval_date": "2017-09-28",
+    "initial_approval_url": "https://www.accessdata.fda.gov/drugsatfda_docs/label/2017/208716Orig1s000lbl.pdf",
+    "description": "La Administración de Alimentos y Medicamentos de los Estados Unidos (FDA) ha aprobado el fármaco abemaciclib para el tratamiento de pacientes adultos con cáncer de mama avanzado o metastásico, que sean positivos para los receptores hormonales (RH), negativos para el factor de crecimiento epidérmico humano 2 (HER2), y que presenten progresión de la enfermedad tras la terapia endocrina y, previamente, hayan recibido quimioterapia en un contexto metastásico.",
+    "raw_biomarkers": "HR+, HER2-negative",
+    "raw_cancer_type": "advanced or metastatic breast cancer",
+    "raw_therapeutics": "Verzenio (abemaciclib)"
+  },
+  {
+    "id": "ind:fda.akeega:0",
+    "document_id": "doc:fda.akeega",
+    "indication": "AKEEGA es una combinación de niraparib, un inhibidor de la poli(ADP-ribosa) polimerasa (PARP), y acetato de abiraterona, un inhibidor de CYP17, indicado junto con prednisona para el tratamiento de pacientes adultos con cáncer de próstata metastásico resistente a la castración y con mutaciones BRCA (BRCAm) confirmadas o sospechosas. Seleccionar a los pacientes para el tratamiento basándose en una prueba aprobada por la FDA para AKEEGA.",
+    "initial_approval_date": "2018-08-11",
+    "initial_approval_url": "https://www.accessdata.fda.gov/drugsatfda_docs/label/2023/216793s000lbl.pdf",
+    "description": "La Administración de Alimentos y Medicamentos de los Estados Unidos (FDA) ha aprobado Akeega (acetato de abiraterona con niraparib) en combinación con prednisona para el tratamiento de pacientes adultos con cáncer de próstata metastásico resistente a la castración (mCRPC) que presentan mutaciones deletéreas en los genes BRCA (BRCAm) o se sospecha que las tienen. Los pacientes deben ser seleccionados para el tratamiento basándose en una prueba aprobada por la FDA para Akeega.",
+    "raw_biomarkers": "deleterious or suspected deleterious BRCA-mutated (BRCAm)",
+    "raw_cancer_type": "metastatic castration-resistant prostate cancer",
+    "raw_therapeutics": "Akeega (abiraterone acetate and niraparib) in combination with prednisone"
+  }
+]
