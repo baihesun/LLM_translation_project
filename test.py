@@ -8,7 +8,7 @@ import sys
 how to push to github bc I always forget:
 cd LLM_translation_project
 git add .
-git commit -m "commit added claude, gemini, translategemma options"
+git commit -m "commit added ollama support for translategemma"
 git push origin main
 """
 
