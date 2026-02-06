@@ -1,0 +1,32 @@
+[
+  {
+    "id": "ind:fda.verzenio:0",
+    "en": "Verzenio is a kinase inhibitor indicated in combination with endocrine therapy (tamoxifen or an aromatase inhibitor) for the adjuvant treatment of adult patients with hormone receptor (HR)-positive, human epidermal growth factor receptor 2 (HER2)-negative, node positive, early breast cancer at high risk of recurrence.",
+    "es": "Verzenio es un inhibidor de quinasa indicado en combinación con terapia endocrina (tamoxifeno o un inhibidor de aromatasa) para el tratamiento adyuvante de pacientes adultos con cáncer de mama temprano positivo para receptores hormonales (RH), negativo para el receptor 2 del factor de crecimiento epidérmico humano (HER2), con ganglios linfáticos positivos y alto riesgo de recurrencia.",
+    "fr": "Verzenio est un inhibiteur de kinase indiqué en association avec une thérapie endocrinienne (tamoxifène ou un inhibiteur de l'aromatase) pour le traitement adjuvant des patients adultes atteints d'un cancer du sein précoce à haut risque de récidive, positif aux récepteurs hormonaux (RH+), négatif pour le récepteur 2 du facteur de croissance épidermique humain (HER2-), et présentant des ganglions lymphatiques positifs."
+  },
+  {
+    "id": "ind:fda.verzenio:1",
+    "en": "Verzenio is a kinase inhibitor indicated in combination with an aromatase inhibitor as initial endocrine-based therapy for the treatment of adult patients with hormone receptor (HR)-positive, human epidermal growth factor receptor 2 (HER2)-negative advanced or metastatic breast cancer.",
+    "es": "Verzenio es un inhibidor de quinasa indicado en combinación con un inhibidor de aromatasa como terapia endocrina inicial para el tratamiento de pacientes adultos con cáncer de mama avanzado o metastásico positivo para receptores hormonales (HR) y negativo para el receptor 2 del factor de crecimiento epidérmico humano (HER2).",
+    "fr": "Verzenio est un inhibiteur de kinase indiqué en association avec un inhibiteur de l'aromatase en tant que traitement endocrinien initial pour les patients adultes atteints d'un cancer du sein avancé ou métastatique positif aux récepteurs hormonaux (RH) et négatif au récepteur 2 du facteur de croissance épidermique humain (HER2)."
+  },
+  {
+    "id": "ind:fda.verzenio:2",
+    "en": "Verzenio is a kinase inhibitor indicated in combination with fulvestrant for the treatment of adult patients with hormone receptor (HR)-positive, human epidermal growth factor receptor 2 (HER2)-negative advanced or metastatic breast cancer with disease progression following endocrine therapy.",
+    "es": "Verzenio es un inhibidor de quinasas indicado en combinación con fulvestrant para el tratamiento de pacientes adultos con cáncer de mama avanzado o metastásico positivo para el receptor hormonal (HR) y negativo para el receptor 2 del factor de crecimiento epidérmico humano (HER2) con progresión de la enfermedad tras la terapia endocrina.",
+    "fr": "Verzenio est un inhibiteur de kinase indiqué en association avec le fulvestrant pour le traitement des patients adultes atteints d'un cancer du sein avancé ou métastatique, positif aux récepteurs hormonaux (RH) et négatif au récepteur 2 du facteur de croissance épidermique humain (HER2), présentant une progression de la maladie après une thérapie endocrinienne."
+  },
+  {
+    "id": "ind:fda.verzenio:3",
+    "en": "Verzenio is a kinase inhibitor indicated as monotherapy for the treatment of adult patients with HR-positive, HER2-negative advanced or metastatic breast cancer with disease progression following endocrine therapy and prior chemotherapy in the metastatic setting.",
+    "es": "Verzenio es un inhibidor de quinasa indicado como monoterapia para el tratamiento de pacientes adultos con cáncer de mama avanzado o metastásico, HR-positivo, HER2-negativo, con progresión de la enfermedad tras terapia endocrina y quimioterapia previa en el entorno metastásico.",
+    "fr": "Verzenio est un inhibiteur de kinase indiqué en monothérapie pour le traitement des patients adultes atteints d'un cancer du sein avancé ou métastatique HR-positif, HER2-négatif avec progression de la maladie après une thérapie endocrinienne et une chimiothérapie préalable dans le contexte métastatique."
+  },
+  {
+    "id": "ind:fda.akeega:0",
+    "en": "AKEEGA is a combination of niraparib, a poly (ADP-ribose) polymerase (PARP) inhibitor, and abiraterone acetate, a CYP17 inhibitor indicated with prednisone for the treatment of adult patients with deleterious or suspected deleterious BRCA-mutated (BRCAm) metastatic castration-resistant prostate cancer (mCRPC). Select patients for therapy based on an FDA-approved test for AKEEGA.",
+    "es": "AKEEGA es una combinación de niraparib, un inhibidor de la poli (ADP-ribosa) polimerasa (PARP), y acetato de abiraterona, un inhibidor de CYP17 indicado con prednisona para el tratamiento de pacientes adultos con cáncer de próstata resistente a la castración metastásico (mCRPC) con mutación deletérea o sospechada de BRCA (BRCAm). Seleccione a los pacientes para la terapia basándose en una prueba aprobada por la FDA para AKEEGA.",
+    "fr": "AKEEGA est une combinaison de niraparib, un inhibiteur de la poly (ADP-ribose) polymérase (PARP), et d'acétate d'abiratérone, un inhibiteur de CYP17 indiqué avec la prednisone pour le traitement des patients adultes atteints d'un cancer de la prostate métastatique résistant à la castration (mCRPC) porteurs de mutations délétères ou suspectées délétères du gène BRCA (BRCAm). Sélectionnez les patients pour la thérapie en fonction d'un test approuvé par la FDA pour AKEEGA."
+  }
+]

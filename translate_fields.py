@@ -12,15 +12,14 @@ git commit -m "commit added ollama support for translategemma"
 git push origin main
 """
 
-
-
 # CONFIGURATION
 INDICATIONS_PATH = "/Users/baihesun/moalmanac-db/referenced/indications.json"
-OUTPUT_DIR = "/Users/baihesun/Desktop/python/LLM_translation_project/results/"
+OUTPUT_DIR = "/Users/baihesun/Desktop/python/LLM_translation_project/results_fields/"
 LANGUAGE = "Spanish"
-MODEL_PROVIDER = "translategemma"  # Options: "openai", "claude", "gemini", "translategemma"
+MODEL_PROVIDER = "openai"  # Options: "openai", "claude", "gemini", "translategemma"
 TEMPERATURE = 0.2
 TEST_SIZE = 5
+LANG_CODES = {"Spanish": "es", "French": "fr", "English": "en"}
 
 # TranslateGemma Configuration: Use Ollama (faster local inference) or HuggingFace
 USE_OLLAMA_FOR_TRANSLATEGEMMA = True  # Set to False to use HuggingFace Transformers instead
@@ -77,9 +76,8 @@ def get_client(provider, config):
 
 def translate_field(client, text, language, provider, model, temperature):
     # Language codes for translategemma
-    lang_codes = {"Spanish": "es", "French": "fr", "English": "en", "German": "de", "Portuguese": "pt"}
     source_code = "en"
-    target_code = lang_codes.get(language, "es")
+    target_code = LANG_CODES.get(language, "es")
 
     # Professional translation prompt template for medical oncology database (used by all providers)
     prompt = f"""You are a professional English ({source_code}) to {language} ({target_code}) translator specializing in medical oncology terminology. Your goal is to accurately convey the meaning and nuances of the original English text while adhering to {language} grammar, vocabulary, and cultural sensitivities.
@@ -145,16 +143,61 @@ Produce only the {language} translation, without any additional explanations or 
         ).text
 
 
-def translate_entry(client, entry, language, provider, model, temperature):
-    translated = entry.copy()
-    if entry.get('indication'):
-        translated['indication'] = translate_field(client, entry['indication'], language, provider, model, temperature)
-    if entry.get('description'):
-        translated['description'] = translate_field(client, entry['description'], language, provider, model, temperature)
-    return translated
+def translate_fields_to_files(client, data, fields, original_language, target_languages, provider, model, temperature, output_dir=OUTPUT_DIR, test_size=None):
+    """
+    translate multiple fields from data to multiple languages and save to separate JSON files.
+    creates one JSON file per field with format:
+        {field}_{MODEL_PROVIDER}.json containing entries:
+        [{"id": "...", "en": "...", "es": "...", "fr": "..."}, ...]
+    """
+    os.makedirs(output_dir, exist_ok=True)
+
+    # Limit data to test_size if specified
+    if test_size:
+        data = data[:test_size]
+        print(f"testing: with {test_size} entries\n")
+
+    original_language_code = LANG_CODES.get(original_language)
+
+    # Process each field separately
+    for field in fields:
+        print(f"\n{'='*60}")
+        print(f"Processing field: {field}")
+        print(f"{'='*60}")
+
+        field_results = []
+
+        # process each entry requested 
+        for i, entry in enumerate(data):
+
+            # create result entry with id and original text
+            result_entry = {
+                "id": entry.get("id"), 
+                f"{original_language_code}": entry[field]
+            }
+
+            # translating 
+            for language in target_languages:
+                language_code = LANG_CODES.get(language)
+                print(f"  Entry {i+1}/{len(data)} - Translating to {language}...", end="")
+                translation = translate_field(client, entry[field], language, provider, model, temperature)
+                result_entry[language_code] = translation
+
+            field_results.append(result_entry)
+
+        # save
+        output_path = os.path.join(output_dir, f"{field}_{MODEL_PROVIDER}.json")
+        with open(output_path, 'w') as f:
+            json.dump(field_results, f, indent=2, ensure_ascii=False)
+
+        print(f"\nSaved {len(field_results)} entries to: {output_path}")
+
+    print(f"\n{'='*60}")
+    print("All done!")
+    print(f"{'='*60}")
 
 
-def main():
+def main_multi_field():
     os.makedirs(OUTPUT_DIR, exist_ok=True)
     config = MODEL_CONFIGS[MODEL_PROVIDER]
 
@@ -171,36 +214,37 @@ def main():
     with open(INDICATIONS_PATH, 'r') as f:
         data = json.load(f)
 
-    if TEST_SIZE:
-        data = data[:TEST_SIZE]
+    # Define which fields to translate and which languages
+    fields_to_translate = ["indication", "description"]
+    original_language = "English"
+    target_languages = ["Spanish", "French"]  # Can add more languages
 
-    print(f"Translating {len(data)} entries to {LANGUAGE}...\n")
+    # Show what will be processed
+    num_entries = TEST_SIZE if TEST_SIZE else len(data)
+    print(f"\nTranslating {num_entries} entries")
+    print(f"Fields: {fields_to_translate}")
+    print(f"From: {original_language}")
+    print(f"To: {target_languages}")
 
     start = time.time()
-    translated = []
 
-    for i, entry in enumerate(data):
-        translated.append(translate_entry(client, entry, LANGUAGE, MODEL_PROVIDER, model_name, TEMPERATURE))
-        elapsed = time.time() - start
-        remaining = (elapsed / (i + 1)) * (len(data) - i - 1)
-        sys.stdout.write(f"\r{i+1}/{len(data)} ({100*(i+1)/len(data):.1f}%) | {elapsed:.0f}s elapsed | {remaining:.0f}s remaining")
-        sys.stdout.flush()
-
-    suffix = f"_test_{TEST_SIZE}" if TEST_SIZE else ""
-    # Add method suffix for translategemma (ollama vs hf)
-    if MODEL_PROVIDER == "translategemma":
-        method_suffix = "_ollama" if USE_OLLAMA_FOR_TRANSLATEGEMMA else "_hf"
-        output = os.path.join(OUTPUT_DIR, f"indications_{LANGUAGE}_{MODEL_PROVIDER}{method_suffix}{suffix}.json")
-    else:
-        output = os.path.join(OUTPUT_DIR, f"indications_{LANGUAGE}_{MODEL_PROVIDER}{suffix}.json")
-
-    with open(output, 'w') as f:
-        json.dump(translated, f, indent=2, ensure_ascii=False)
+    # Call the multi-field translation function
+    translate_fields_to_files(
+        client=client,
+        data=data,
+        fields=fields_to_translate,
+        original_language=original_language,
+        target_languages=target_languages,
+        provider=MODEL_PROVIDER,
+        model=model_name,
+        temperature=TEMPERATURE,
+        output_dir=OUTPUT_DIR,
+        test_size=TEST_SIZE
+    )
 
     total = time.time() - start
-    print(f"\n\nDone! {len(data)} entries in {total:.1f}s ({total/len(data):.2f}s/entry)")
-    print(f"Saved to: {output}")
+    print(f"\nTotal time: {total:.1f}s")
 
 
 if __name__ == "__main__":
-    main()
+    main_multi_field()
