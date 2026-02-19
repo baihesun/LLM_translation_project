@@ -8,7 +8,7 @@ import sys
 how to push to github bc I always forget:
 cd LLM_translation_project
 git add .
-git commit -m "commit added ollama support for translategemma"
+git commit -m "commit added translate fields individually"
 git push origin main
 """
 
@@ -17,8 +17,8 @@ INDICATIONS_PATH = "/Users/baihesun/moalmanac-db/referenced/indications.json"
 OUTPUT_DIR = "/Users/baihesun/Desktop/python/LLM_translation_project/results_fields/"
 LANGUAGE = "Spanish"
 MODEL_PROVIDER = "openai"  # Options: "openai", "claude", "gemini", "translategemma"
-TEMPERATURE = 0.2
-TEST_SIZE = 5
+TEMPERATURE = 0.1
+TEST_SIZE = None
 LANG_CODES = {"Spanish": "es", "French": "fr", "English": "en"}
 
 # TranslateGemma Configuration: Use Ollama (faster local inference) or HuggingFace
@@ -83,20 +83,9 @@ def translate_field(client, text, language, provider, model, temperature):
     prompt = f"""You are a professional English ({source_code}) to {language} ({target_code}) translator specializing in medical oncology terminology. Your goal is to accurately convey the meaning and nuances of the original English text while adhering to {language} grammar, vocabulary, and cultural sensitivities.
 
 Given the medical oncology context, ensure the following:
-
-- **Prioritize Complete and Accurate Terminology:** When translating any medical or oncology 
-term, always strive for the most complete and technically accurate Spanish equivalent. This 
-means using the full, established term, rather than a shortened or informal version.  Consider 
-the context carefully to determine the best term to use.
-
-- **Maintain Clinical Precision:** Preserve the clinical meaning and technical accuracy of the 
-original English text in the translation.
-
-- **Adhere to Standard Medical Terminology:**  Use terminology consistent with standard 
-medical practices in the Spanish-speaking world.
-
-- **Avoid Slang and Informal Expressions:**  Do not use any slang, colloquialisms, or informal 
-language.
+- Maintain Clinical Precision: Preserve the clinical meaning and technical accuracy of the original English text in the translation.
+- Adhere to Standard Medical Terminology: Use terminology consistent with standard medical practices in the {language}-speaking world.
+- Avoid Slang and Informal Expressions: Do not use any slang, colloquialisms, or informal language.
 
 Produce only the {language} translation, without any additional explanations or commentary. Please translate the following English text into {language}:
 
@@ -176,6 +165,8 @@ def translate_fields_to_files(client, data, fields, original_language, target_la
                 f"{original_language_code}": entry[field]
             }
 
+            print(i)
+
             # translating 
             for language in target_languages:
                 language_code = LANG_CODES.get(language)
@@ -215,7 +206,7 @@ def main_multi_field():
         data = json.load(f)
 
     # Define which fields to translate and which languages
-    fields_to_translate = ["indication", "description"]
+    fields_to_translate = ["description"]
     original_language = "English"
     target_languages = ["Spanish", "French"]  # Can add more languages
 

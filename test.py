@@ -15,18 +15,29 @@ git push origin main
 
 
 # CONFIGURATION
-INDICATIONS_PATH = "/Users/baihesun/moalmanac-db/referenced/indications.json"
-OUTPUT_DIR = "/Users/baihesun/Desktop/python/LLM_translation_project/results/"
-LANGUAGE = "Spanish"
-MODEL_PROVIDER = "translategemma"  # Options: "openai", "claude", "gemini", "translategemma"
-TEMPERATURE = 0.2
+INDICATIONS_PATH = "/home/baihesun/LLM_translation_project/descriptions.json"
+OUTPUT_DIR = "/home/baihesun/LLM_translation_project/results/"
+LANGUAGES = ["Spanish", "French", "Haitian Creole", "Arabic", "Somali", "Urdu", "Chinese", "Yiddish"]
+MODEL_PROVIDER = "openai"  # Options: "openai", "claude", "gemini", "translategemma"
+TEMPERATURE = 0.1
 TEST_SIZE = 5
+LANG_CODES = {
+    "English": "en",
+    "Spanish": "es",
+    "French": "fr",
+    "Haitian Creole": "ht",
+    "Arabic": "ar",
+    "Somali": "so",
+    "Urdu": "ur",
+    "Chinese": "zh",
+    "Yiddish": "yi"
+}
 
 # TranslateGemma Configuration: Use Ollama (faster local inference) or HuggingFace
 USE_OLLAMA_FOR_TRANSLATEGEMMA = True  # Set to False to use HuggingFace Transformers instead
 
 MODEL_CONFIGS = {
-    "openai": {"model": "gpt-3.5-turbo", "api_key_env": "OPENAI_API_KEY"},
+    "openai": {"model": "gpt-5.2", "api_key_env": "OPENAI_API_KEY"},
     "claude": {"model": "claude-sonnet-4-5-20250929", "api_key_env": "ANTHROPIC_API_KEY"},
     "gemini": {"model": "gemini-2.5-flash-lite", "api_key_env": "GOOGLE_API_KEY"},
     "translategemma": {
@@ -82,25 +93,7 @@ def translate_field(client, text, language, provider, model, temperature):
     target_code = lang_codes.get(language, "es")
 
     # Professional translation prompt template for medical oncology database (used by all providers)
-    prompt = f"""You are a professional English ({source_code}) to {language} ({target_code}) translator specializing in medical oncology terminology. Your goal is to accurately convey the meaning and nuances of the original English text while adhering to {language} grammar, vocabulary, and cultural sensitivities.
-
-Given the medical oncology context, ensure the following:
-
-- **Prioritize Complete and Accurate Terminology:** When translating any medical or oncology 
-term, always strive for the most complete and technically accurate Spanish equivalent. This 
-means using the full, established term, rather than a shortened or informal version.  Consider 
-the context carefully to determine the best term to use.
-
-- **Maintain Clinical Precision:** Preserve the clinical meaning and technical accuracy of the 
-original English text in the translation.
-
-- **Adhere to Standard Medical Terminology:**  Use terminology consistent with standard 
-medical practices in the Spanish-speaking world.
-
-- **Avoid Slang and Informal Expressions:**  Do not use any slang, colloquialisms, or informal 
-language.
-
-Produce only the {language} translation, without any additional explanations or commentary. Please translate the following English text into {language}:
+    prompt = prompt = f"""Translate the following medical oncology text from English to {language}. Use standard medical terminology in {language}-speaking medical practice. Output only the translation, no explanations.
 
 {text}"""
 
@@ -145,12 +138,11 @@ Produce only the {language} translation, without any additional explanations or 
         ).text
 
 
-def translate_entry(client, entry, language, provider, model, temperature):
+def translate_entry(client, entry, languages, provider, model, temperature):
     translated = entry.copy()
-    if entry.get('indication'):
-        translated['indication'] = translate_field(client, entry['indication'], language, provider, model, temperature)
-    if entry.get('description'):
-        translated['description'] = translate_field(client, entry['description'], language, provider, model, temperature)
+    if entry.get('en'):
+        for language in languages:
+            translated[LANG_CODES.get(language)] = translate_field(client, entry['en'], language, provider, model, temperature)
     return translated
 
 
@@ -174,13 +166,13 @@ def main():
     if TEST_SIZE:
         data = data[:TEST_SIZE]
 
-    print(f"Translating {len(data)} entries to {LANGUAGE}...\n")
+    print(f"Translating {len(data)} entries to {LANGUAGES}...\n")
 
     start = time.time()
     translated = []
-
+    
     for i, entry in enumerate(data):
-        translated.append(translate_entry(client, entry, LANGUAGE, MODEL_PROVIDER, model_name, TEMPERATURE))
+        translated.append(translate_entry(client, entry, LANGUAGES, MODEL_PROVIDER, model_name, TEMPERATURE))
         elapsed = time.time() - start
         remaining = (elapsed / (i + 1)) * (len(data) - i - 1)
         sys.stdout.write(f"\r{i+1}/{len(data)} ({100*(i+1)/len(data):.1f}%) | {elapsed:.0f}s elapsed | {remaining:.0f}s remaining")
@@ -190,9 +182,9 @@ def main():
     # Add method suffix for translategemma (ollama vs hf)
     if MODEL_PROVIDER == "translategemma":
         method_suffix = "_ollama" if USE_OLLAMA_FOR_TRANSLATEGEMMA else "_hf"
-        output = os.path.join(OUTPUT_DIR, f"indications_{LANGUAGE}_{MODEL_PROVIDER}{method_suffix}{suffix}.json")
+        output = os.path.join(OUTPUT_DIR, f"descriptions_{MODEL_PROVIDER}{method_suffix}{suffix}.json")
     else:
-        output = os.path.join(OUTPUT_DIR, f"indications_{LANGUAGE}_{MODEL_PROVIDER}{suffix}.json")
+        output = os.path.join(OUTPUT_DIR, f"descriptions_{MODEL_PROVIDER}{suffix}.json")
 
     with open(output, 'w') as f:
         json.dump(translated, f, indent=2, ensure_ascii=False)

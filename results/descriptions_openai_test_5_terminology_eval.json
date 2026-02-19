@@ -1,0 +1,507 @@
+{
+  "overall_accuracy": 0.7699115044247787,
+  "entries": [
+    {
+      "id": "desc:ind:fda.verzenio:0",
+      "accuracy": 0.6842105263157895,
+      "matched_count": 13,
+      "total_terms_found": 19,
+      "matched": [
+        {
+          "en": "aromatase inhibitor",
+          "es_gold": "inhibidor de la aromatasa"
+        },
+        {
+          "en": "breast",
+          "es_gold": "mama"
+        },
+        {
+          "en": "breast cancer",
+          "es_gold": "cáncer de mama"
+        },
+        {
+          "en": "cancer",
+          "es_gold": "cáncer"
+        },
+        {
+          "en": "endocrine",
+          "es_gold": "endocrino"
+        },
+        {
+          "en": "endocrine therapy",
+          "es_gold": "terapia endocrina"
+        },
+        {
+          "en": "epidermal growth factor",
+          "es_gold": "factor de crecimiento epidérmico"
+        },
+        {
+          "en": "growth factor",
+          "es_gold": "factor de crecimiento"
+        },
+        {
+          "en": "her2",
+          "es_gold": "her2"
+        },
+        {
+          "en": "hormone receptor",
+          "es_gold": "receptor hormonal"
+        },
+        {
+          "en": "human epidermal growth factor receptor 2",
+          "es_gold": "receptor 2 del factor de crecimiento epidérmico humano"
+        },
+        {
+          "en": "therapy",
+          "es_gold": "terapia"
+        },
+        {
+          "en": "verzenio",
+          "es_gold": "verzenio"
+        }
+      ],
+      "missed": [
+        {
+          "en": "epidermal growth factor receptor",
+          "es_gold": "receptor del factor de crecimiento epidérmico"
+        },
+        {
+          "en": "hormone",
+          "es_gold": "hormona"
+        },
+        {
+          "en": "kinase",
+          "es_gold": "cinasa"
+        },
+        {
+          "en": "kinase inhibitor",
+          "es_gold": "inhibidor de cinasas"
+        },
+        {
+          "en": "receptor",
+          "es_gold": "molécula receptora"
+        },
+        {
+          "en": "recurrence",
+          "es_gold": "recidiva"
+        }
+      ]
+    },
+    {
+      "id": "desc:stmt:fda.verzenio:0",
+      "accuracy": 0.8148148148148148,
+      "matched_count": 22,
+      "total_terms_found": 27,
+      "matched": [
+        {
+          "en": "abemaciclib",
+          "es_gold": "abemaciclib"
+        },
+        {
+          "en": "administration",
+          "es_gold": "administración"
+        },
+        {
+          "en": "anastrozole",
+          "es_gold": "anastrozol"
+        },
+        {
+          "en": "aromatase inhibitor",
+          "es_gold": "inhibidor de la aromatasa"
+        },
+        {
+          "en": "breast",
+          "es_gold": "mama"
+        },
+        {
+          "en": "breast cancer",
+          "es_gold": "cáncer de mama"
+        },
+        {
+          "en": "cancer",
+          "es_gold": "cáncer"
+        },
+        {
+          "en": "clinical",
+          "es_gold": "clínico"
+        },
+        {
+          "en": "clinical trial",
+          "es_gold": "ensayo clínico"
+        },
+        {
+          "en": "cohort",
+          "es_gold": "cohorte"
+        },
+        {
+          "en": "endocrine",
+          "es_gold": "endocrino"
+        },
+        {
+          "en": "endocrine therapy",
+          "es_gold": "terapia endocrina"
+        },
+        {
+          "en": "epidermal growth factor",
+          "es_gold": "factor de crecimiento epidérmico"
+        },
+        {
+          "en": "exemestane",
+          "es_gold": "exemestano"
+        },
+        {
+          "en": "fda",
+          "es_gold": "fda"
+        },
+        {
+          "en": "food and drug administration",
+          "es_gold": "administración de alimentos y medicamentos"
+        },
+        {
+          "en": "growth factor",
+          "es_gold": "factor de crecimiento"
+        },
+        {
+          "en": "her2",
+          "es_gold": "her2"
+        },
+        {
+          "en": "hormone receptor",
+          "es_gold": "receptor hormonal"
+        },
+        {
+          "en": "letrozole",
+          "es_gold": "letrozol"
+        },
+        {
+          "en": "multicenter study",
+          "es_gold": "estudio multicéntrico"
+        },
+        {
+          "en": "therapy",
+          "es_gold": "terapia"
+        }
+      ],
+      "missed": [
+        {
+          "en": "drug",
+          "es_gold": "fármaco"
+        },
+        {
+          "en": "hormone",
+          "es_gold": "hormona"
+        },
+        {
+          "en": "indication",
+          "es_gold": "indicio"
+        },
+        {
+          "en": "receptor",
+          "es_gold": "molécula receptora"
+        },
+        {
+          "en": "recurrence",
+          "es_gold": "recidiva"
+        }
+      ]
+    },
+    {
+      "id": "desc:ind:fda.verzenio:1",
+      "accuracy": 0.7222222222222222,
+      "matched_count": 13,
+      "total_terms_found": 18,
+      "matched": [
+        {
+          "en": "aromatase inhibitor",
+          "es_gold": "inhibidor de la aromatasa"
+        },
+        {
+          "en": "breast",
+          "es_gold": "mama"
+        },
+        {
+          "en": "breast cancer",
+          "es_gold": "cáncer de mama"
+        },
+        {
+          "en": "cancer",
+          "es_gold": "cáncer"
+        },
+        {
+          "en": "endocrine",
+          "es_gold": "endocrino"
+        },
+        {
+          "en": "epidermal growth factor",
+          "es_gold": "factor de crecimiento epidérmico"
+        },
+        {
+          "en": "growth factor",
+          "es_gold": "factor de crecimiento"
+        },
+        {
+          "en": "her2",
+          "es_gold": "her2"
+        },
+        {
+          "en": "hormone receptor",
+          "es_gold": "receptor hormonal"
+        },
+        {
+          "en": "human epidermal growth factor receptor 2",
+          "es_gold": "receptor 2 del factor de crecimiento epidérmico humano"
+        },
+        {
+          "en": "metastatic",
+          "es_gold": "metastásico"
+        },
+        {
+          "en": "therapy",
+          "es_gold": "terapia"
+        },
+        {
+          "en": "verzenio",
+          "es_gold": "verzenio"
+        }
+      ],
+      "missed": [
+        {
+          "en": "epidermal growth factor receptor",
+          "es_gold": "receptor del factor de crecimiento epidérmico"
+        },
+        {
+          "en": "hormone",
+          "es_gold": "hormona"
+        },
+        {
+          "en": "kinase",
+          "es_gold": "cinasa"
+        },
+        {
+          "en": "kinase inhibitor",
+          "es_gold": "inhibidor de cinasas"
+        },
+        {
+          "en": "receptor",
+          "es_gold": "molécula receptora"
+        }
+      ]
+    },
+    {
+      "id": "desc:stmt:fda.verzenio:1",
+      "accuracy": 0.8148148148148148,
+      "matched_count": 22,
+      "total_terms_found": 27,
+      "matched": [
+        {
+          "en": "abemaciclib",
+          "es_gold": "abemaciclib"
+        },
+        {
+          "en": "administration",
+          "es_gold": "administración"
+        },
+        {
+          "en": "anastrozole",
+          "es_gold": "anastrozol"
+        },
+        {
+          "en": "aromatase inhibitor",
+          "es_gold": "inhibidor de la aromatasa"
+        },
+        {
+          "en": "breast",
+          "es_gold": "mama"
+        },
+        {
+          "en": "breast cancer",
+          "es_gold": "cáncer de mama"
+        },
+        {
+          "en": "cancer",
+          "es_gold": "cáncer"
+        },
+        {
+          "en": "clinical",
+          "es_gold": "clínico"
+        },
+        {
+          "en": "clinical trial",
+          "es_gold": "ensayo clínico"
+        },
+        {
+          "en": "epidermal growth factor",
+          "es_gold": "factor de crecimiento epidérmico"
+        },
+        {
+          "en": "fda",
+          "es_gold": "fda"
+        },
+        {
+          "en": "food and drug administration",
+          "es_gold": "administración de alimentos y medicamentos"
+        },
+        {
+          "en": "growth factor",
+          "es_gold": "factor de crecimiento"
+        },
+        {
+          "en": "her2",
+          "es_gold": "her2"
+        },
+        {
+          "en": "hormone receptor",
+          "es_gold": "receptor hormonal"
+        },
+        {
+          "en": "letrozole",
+          "es_gold": "letrozol"
+        },
+        {
+          "en": "metastatic",
+          "es_gold": "metastásico"
+        },
+        {
+          "en": "multicenter study",
+          "es_gold": "estudio multicéntrico"
+        },
+        {
+          "en": "physician",
+          "es_gold": "médico"
+        },
+        {
+          "en": "placebo",
+          "es_gold": "placebo"
+        },
+        {
+          "en": "placebo-controlled",
+          "es_gold": "controlado con placebo"
+        },
+        {
+          "en": "therapy",
+          "es_gold": "terapia"
+        }
+      ],
+      "missed": [
+        {
+          "en": "drug",
+          "es_gold": "fármaco"
+        },
+        {
+          "en": "endocrine",
+          "es_gold": "endocrino"
+        },
+        {
+          "en": "hormone",
+          "es_gold": "hormona"
+        },
+        {
+          "en": "indication",
+          "es_gold": "indicio"
+        },
+        {
+          "en": "receptor",
+          "es_gold": "molécula receptora"
+        }
+      ]
+    },
+    {
+      "id": "desc:ind:fda.verzenio:2",
+      "accuracy": 0.7727272727272727,
+      "matched_count": 17,
+      "total_terms_found": 22,
+      "matched": [
+        {
+          "en": "breast",
+          "es_gold": "mama"
+        },
+        {
+          "en": "breast cancer",
+          "es_gold": "cáncer de mama"
+        },
+        {
+          "en": "cancer",
+          "es_gold": "cáncer"
+        },
+        {
+          "en": "disease",
+          "es_gold": "enfermedad"
+        },
+        {
+          "en": "disease progression",
+          "es_gold": "progresión de la enfermedad"
+        },
+        {
+          "en": "endocrine",
+          "es_gold": "endocrino"
+        },
+        {
+          "en": "endocrine therapy",
+          "es_gold": "terapia endocrina"
+        },
+        {
+          "en": "epidermal growth factor",
+          "es_gold": "factor de crecimiento epidérmico"
+        },
+        {
+          "en": "fulvestrant",
+          "es_gold": "fulvestrant"
+        },
+        {
+          "en": "growth factor",
+          "es_gold": "factor de crecimiento"
+        },
+        {
+          "en": "her2",
+          "es_gold": "her2"
+        },
+        {
+          "en": "hormone receptor",
+          "es_gold": "receptor hormonal"
+        },
+        {
+          "en": "human epidermal growth factor receptor 2",
+          "es_gold": "receptor 2 del factor de crecimiento epidérmico humano"
+        },
+        {
+          "en": "metastatic",
+          "es_gold": "metastásico"
+        },
+        {
+          "en": "progression",
+          "es_gold": "progresión"
+        },
+        {
+          "en": "therapy",
+          "es_gold": "terapia"
+        },
+        {
+          "en": "verzenio",
+          "es_gold": "verzenio"
+        }
+      ],
+      "missed": [
+        {
+          "en": "epidermal growth factor receptor",
+          "es_gold": "receptor del factor de crecimiento epidérmico"
+        },
+        {
+          "en": "hormone",
+          "es_gold": "hormona"
+        },
+        {
+          "en": "kinase",
+          "es_gold": "cinasa"
+        },
+        {
+          "en": "kinase inhibitor",
+          "es_gold": "inhibidor de cinasas"
+        },
+        {
+          "en": "receptor",
+          "es_gold": "molécula receptora"
+        }
+      ]
+    }
+  ]
+}
