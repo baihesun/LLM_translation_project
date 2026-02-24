@@ -1,0 +1,152 @@
+[
+  {
+    "id": "desc:ind:fda.verzenio:0",
+    "en": "Verzenio is a kinase inhibitor indicated in combination with endocrine therapy (tamoxifen or an aromatase inhibitor) for the adjuvant treatment of adult patients with hormone receptor (HR)-positive, human epidermal growth factor receptor 2 (HER2)-negative, node positive, early breast cancer at high risk of recurrence.",
+    "mcqs": [
+      {
+        "question": "Verzenio is classified as which type of medication in the passage?",
+        "A": "Kinase inhibitor",
+        "B": "Monoclonal antibody",
+        "C": "Selective estrogen receptor modulator",
+        "D": "Alkylating agent",
+        "answer": "A"
+      },
+      {
+        "question": "According to the passage, Verzenio is indicated in combination with which therapy?",
+        "A": "Radiation therapy",
+        "B": "Chemotherapy",
+        "C": "Endocrine therapy (tamoxifen or an aromatase inhibitor)",
+        "D": "HER2-targeted therapy",
+        "answer": "C"
+      },
+      {
+        "question": "Which patient population is specifically described as eligible for adjuvant treatment with Verzenio in the passage?",
+        "A": "Adults with HR-negative, HER2-positive metastatic breast cancer",
+        "B": "Adults with HR-positive, HER2-negative, node positive early breast cancer at high risk of recurrence",
+        "C": "Pediatric patients with HR-positive, HER2-negative breast cancer",
+        "D": "Adults with HER2-negative, node negative early breast cancer at low risk of recurrence",
+        "answer": "B"
+      }
+    ]
+  },
+  {
+    "id": "desc:stmt:fda.verzenio:0",
+    "en": "The U.S. Food and Drug Administration (FDA) granted approval to abemaciclib in combination with endocrine therapy (tamoxifen or an aromatase inhibitor) for the adjuvant treatment of adult patients with hormone receptor (HR)-positive, human epidermal growth factor 2 (HER2)-negative, node positive, early breast cancer at high risk of recurrence. This indication is based on the monarchE (NCT03155997) clinical trial, which was a randomized (1:1), open-label, two cohort, multicenter study. Initial endocrine therapy received by patients included letrozole (39%), tamoxifen (31%), anastrozole (22%), or exemestane (8%).",
+    "mcqs": [
+      {
+        "question": "For which patient population did the FDA approve abemaciclib in combination with endocrine therapy as adjuvant treatment?",
+        "A": "Adult patients with HR-positive, HER2-negative, node positive, early breast cancer at high risk of recurrence",
+        "B": "Adult patients with HR-negative, HER2-positive, metastatic breast cancer",
+        "C": "Pediatric patients with HR-positive, HER2-negative, node negative breast cancer",
+        "D": "Adult patients with HER2-positive, node positive, early breast cancer at low risk of recurrence",
+        "answer": "A"
+      },
+      {
+        "question": "Which clinical trial served as the basis for this FDA indication for abemaciclib?",
+        "A": "PALOMA-2 (NCT01740427)",
+        "B": "MONALEESA-7 (NCT02278120)",
+        "C": "monarchE (NCT03155997)",
+        "D": "TEXT (NCT00066690)",
+        "answer": "C"
+      },
+      {
+        "question": "In the monarchE trial, which initial endocrine therapy was received by the largest proportion of patients?",
+        "A": "Letrozole (39%)",
+        "B": "Tamoxifen (31%)",
+        "C": "Anastrozole (22%)",
+        "D": "Exemestane (8%)",
+        "answer": "A"
+      }
+    ]
+  },
+  {
+    "id": "desc:ind:fda.verzenio:1",
+    "en": "Verzenio is a kinase inhibitor indicated in combination with an aromatase inhibitor as initial endocrine-based therapy for the treatment of adult patients with hormone receptor (HR)-positive, human epidermal growth factor receptor 2 (HER2)-negative advanced or metastatic breast cancer.",
+    "mcqs": [
+      {
+        "question": "Verzenio is classified as which type of medication in the passage?",
+        "A": "Kinase inhibitor",
+        "B": "Aromatase inhibitor",
+        "C": "Selective estrogen receptor modulator",
+        "D": "Monoclonal antibody",
+        "answer": "A"
+      },
+      {
+        "question": "According to the text, Verzenio is indicated in combination with which therapy as initial endocrine-based treatment?",
+        "A": "Aromatase inhibitor",
+        "B": "HER2-targeted therapy",
+        "C": "Chemotherapy",
+        "D": "Radiation therapy",
+        "answer": "A"
+      },
+      {
+        "question": "For which breast cancer subtype is Verzenio indicated per the passage?",
+        "A": "HR-positive, HER2-negative advanced or metastatic breast cancer in adults",
+        "B": "HR-negative, HER2-positive early-stage breast cancer in adults",
+        "C": "Triple-negative metastatic breast cancer in pediatric patients",
+        "D": "HER2-positive metastatic breast cancer regardless of HR status",
+        "answer": "A"
+      }
+    ]
+  },
+  {
+    "id": "desc:stmt:fda.verzenio:1",
+    "en": "The U.S. Food and Drug Administration (FDA) granted approval to abemaciclib in combination with an aromatase inhibitor as an initial endocrine-based therapy for the treatment of adult patients with hormone receptor (HR)-positive, human epidermal growth factor 2 (HER2)-negative advanced or metastatic breast cancer. This indication is based on the MONARCH 3 (NCT02246621) clinical trial, which was a randomized (2:1), double-blinded, placebo-controlled, multicenter study. A total of 493 patients were randomized to receive 150 mg abemaciclib or placebo orally twice daily, plus physician's choice of letrozole (80% of patients) or anastrozole (20%).",
+    "mcqs": [
+      {
+        "question": "For which patient population was abemaciclib (with an aromatase inhibitor) approved as initial endocrine-based therapy?",
+        "A": "Adult patients with HR-positive, HER2-negative advanced or metastatic breast cancer",
+        "B": "Pediatric patients with HR-negative, HER2-positive early-stage breast cancer",
+        "C": "Adult patients with triple-negative metastatic breast cancer",
+        "D": "Adult patients with HER2-positive advanced breast cancer regardless of HR status",
+        "answer": "A"
+      },
+      {
+        "question": "What was the study design of the MONARCH 3 clinical trial supporting this indication?",
+        "A": "Single-arm, open-label, multicenter study",
+        "B": "Randomized (2:1), double-blinded, placebo-controlled, multicenter study",
+        "C": "Randomized (1:1), double-blinded, active-controlled, single-center study",
+        "D": "Observational cohort study without randomization",
+        "answer": "B"
+      },
+      {
+        "question": "In MONARCH 3, what proportion of patients received letrozole as the physician's choice aromatase inhibitor?",
+        "A": "20%",
+        "B": "50%",
+        "C": "80%",
+        "D": "100%",
+        "answer": "C"
+      }
+    ]
+  },
+  {
+    "id": "desc:ind:fda.verzenio:2",
+    "en": "Verzenio is a kinase inhibitor indicated in combination with fulvestrant for the treatment of adult patients with hormone receptor (HR)-positive, human epidermal growth factor receptor 2 (HER2)-negative advanced or metastatic breast cancer with disease progression following endocrine therapy.",
+    "mcqs": [
+      {
+        "question": "Verzenio is classified as which type of medication in the passage?",
+        "A": "Kinase inhibitor",
+        "B": "Aromatase inhibitor",
+        "C": "Monoclonal antibody",
+        "D": "Selective estrogen receptor modulator (SERM)",
+        "answer": "A"
+      },
+      {
+        "question": "According to the text, Verzenio is indicated in combination with which drug?",
+        "A": "Letrozole",
+        "B": "Trastuzumab",
+        "C": "Fulvestrant",
+        "D": "Paclitaxel",
+        "answer": "C"
+      },
+      {
+        "question": "For which patient population is Verzenio (with fulvestrant) indicated as described?",
+        "A": "Adult patients with HR-positive, HER2-negative advanced or metastatic breast cancer with disease progression following endocrine therapy",
+        "B": "Pediatric patients with HR-negative, HER2-positive early-stage breast cancer after surgery",
+        "C": "Adult patients with HER2-positive metastatic breast cancer after anti-HER2 therapy",
+        "D": "Adult patients with triple-negative breast cancer prior to any systemic therapy",
+        "answer": "A"
+      }
+    ]
+  }
+]
