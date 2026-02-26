@@ -1,6 +1,15 @@
 import json
+import os
 import re
+import sys
 from nltk.stem import SnowballStemmer
+from fuzzywuzzy import fuzz
+
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from generate_translations import (
+    translate_field, get_client, MODEL_CONFIGS, MODEL_PROVIDER, TEMPERATURE,
+    USE_OLLAMA_FOR_TRANSLATEGEMMA,
+)
 
 stemmer = SnowballStemmer("spanish")
 
@@ -78,6 +87,19 @@ def evaluate_entry(en_text, es_text, term_dict):
 def main():
     term_dict = load_term_dict(CANCER_TERMS_FILE, GENETIC_TERMS_FILE)
 
+    # Set up translation client for re-translating missed terms in isolation.
+    # NOTE: es_translated reflects what the model produces for the term alone,
+    # not the actual word used in the full sentence (which we can't recover
+    # without word alignment). A high fuzzy_score means the model knows the
+    # NCI term when prompted directly; a low score suggests a genuine gap.
+    config = MODEL_CONFIGS[MODEL_PROVIDER]
+    if MODEL_PROVIDER == "translategemma":
+        model_name = config["ollama_model"] if USE_OLLAMA_FOR_TRANSLATEGEMMA else config["hf_model"]
+    else:
+        model_name = config["model"]
+    client = get_client(MODEL_PROVIDER, config)
+    translation_cache = {}  # avoid redundant API calls for repeated terms
+
     with open(INPUT_FILE, "r") as f:
         data = json.load(f)
 
@@ -98,6 +120,21 @@ def main():
         eval_result = evaluate_entry(en_text, es_text, term_dict)
         all_matched += len(eval_result["matched"])
         all_total += eval_result["total"]
+
+        for missed_item in eval_result["missed"]:
+            en_term = missed_item["en"]
+            es_gold = missed_item["es_gold"]
+
+            if en_term not in translation_cache:
+                es_translated = translate_field(
+                    client, en_term, "Spanish", MODEL_PROVIDER, model_name, TEMPERATURE
+                ).strip().lower()
+                translation_cache[en_term] = es_translated
+            else:
+                es_translated = translation_cache[en_term]
+
+            missed_item["es_translated"] = es_translated
+            missed_item["fuzzy_score"] = fuzz.token_set_ratio(es_translated, es_gold)
 
         results.append({
             "id": entry.get("id"),

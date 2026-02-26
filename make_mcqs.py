@@ -6,7 +6,7 @@ import argparse
 
 
 # CONFIGURATION
-INPUT_PATH = "/home/baihesun/LLM_translation_project/results/descriptions_openai_test_5.json"
+INPUT_PATH = "/home/baihesun/LLM_translation_project/results/descriptions_openai_nci_test_5.json"
 OUTPUT_DIR = "/home/baihesun/LLM_translation_project/results/"
 MODEL_PROVIDER = "openai"
 TEMPERATURE = 0.3
@@ -52,17 +52,18 @@ Output a JSON object with a single key "questions" whose value is an array of {n
 
 Rules:
 - Each question must have exactly one correct answer
-- Distractors should be plausible but clearly incorrect based on the text
+- Distractors should be plausible but incorrect based on the text
 - All answers must be grounded in the provided text
 - Output only the JSON object, no extra text or markdown
+- Questions should be difficult enough that a mistranslation of a key medical term, drug name, dosage, or clinical detail would likely lead to an incorrect answer
 
 Example format:
 {{
   "questions": [
     {{
       "question": "What drug was approved?",
-      "A": "letrozole",
-      "B": "abemaciclib",
+      "A": "latrozolem",
+      "B": "letrozole",
       "C": "tamoxifen",
       "D": "anastrozole",
       "answer": "B"

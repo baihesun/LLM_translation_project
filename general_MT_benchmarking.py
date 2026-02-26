@@ -6,7 +6,7 @@ import sys
 from comet import load_from_checkpoint
 from comet import download_model
 
-JSON_PATH = "/home/baihesun/LLM_translation_project/results/descriptions_openai_test_5.json"
+JSON_PATH = "/home/baihesun/LLM_translation_project/results/descriptions_openai_nci_test_5.json"
 with open(JSON_PATH, "r") as f:
     translations = json.load(f)
 
@@ -25,6 +25,7 @@ model = load_from_checkpoint(model_path)
 comet_results = pd.DataFrame(index=[entry.get("id") for entry in translations] + ["all"], columns=lang_codes)
 
 for lang in lang_codes:
+    print(f"Evaluating {lang}...")
     # build data
     data = [
         {"src": entry["en"], "mt": entry[lang]} for entry in translations if entry.get("en") and entry.get(lang)
@@ -44,6 +45,7 @@ print(comet_results)
 metricx_results = pd.DataFrame(index=index, columns=lang_codes)
 
 for lang in lang_codes:
+    print(f"Evaluating {lang}...")
     valid = [e for e in translations if e.get("en") and e.get(lang)]
     valid_ids = [e["id"] for e in valid]
 

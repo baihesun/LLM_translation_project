@@ -7,8 +7,8 @@ import csv
 
 
 # CONFIGURATION
-MCQ_PATH = "/home/baihesun/LLM_translation_project/results/mcqs_descriptions_openai_test_5_openai_n3.json"
-TRANSLATIONS_PATH = "/home/baihesun/LLM_translation_project/results/descriptions_openai_test_5.json"
+MCQ_PATH = "/home/baihesun/LLM_translation_project/results/mcqs_descriptions_openai_nci_test_5_openai_n3.json"
+TRANSLATIONS_PATH = "/home/baihesun/LLM_translation_project/results/descriptions_openai_nci_test_5.json"
 OUTPUT_DIR = "/home/baihesun/LLM_translation_project/results/"
 MODEL_PROVIDER = "openai"
 TEMPERATURE = 0.1
@@ -59,6 +59,8 @@ def _extract_json_object(raw):
 
 def translate_mcq(client, mcq, lang_name, provider, model, temperature):
     """Translate a MCQ's question and options to lang_name, preserving A/B/C/D keys."""
+    if lang_name == "es_nci":
+        lang_name = "es"
     mcq_input = {k: mcq[k] for k in ["question", "A", "B", "C", "D"]}
     prompt = (
         f"Translate the following multiple-choice question and its answer options from English to {lang_name}. "

@@ -63,27 +63,39 @@
       "missed": [
         {
           "en": "epidermal growth factor receptor",
-          "es_gold": "receptor del factor de crecimiento epidérmico"
+          "es_gold": "receptor del factor de crecimiento epidérmico",
+          "es_translated": "receptor del factor de crecimiento epidérmico",
+          "fuzzy_score": 100
         },
         {
           "en": "hormone",
-          "es_gold": "hormona"
+          "es_gold": "hormona",
+          "es_translated": "hormona",
+          "fuzzy_score": 100
         },
         {
           "en": "kinase",
-          "es_gold": "cinasa"
+          "es_gold": "cinasa",
+          "es_translated": "quinasa",
+          "fuzzy_score": 77
         },
         {
           "en": "kinase inhibitor",
-          "es_gold": "inhibidor de cinasas"
+          "es_gold": "inhibidor de cinasas",
+          "es_translated": "inhibidor de la quinasa",
+          "fuzzy_score": 84
         },
         {
           "en": "receptor",
-          "es_gold": "molécula receptora"
+          "es_gold": "molécula receptora",
+          "es_translated": "receptor",
+          "fuzzy_score": 64
         },
         {
           "en": "recurrence",
-          "es_gold": "recidiva"
+          "es_gold": "recidiva",
+          "es_translated": "recurrencia",
+          "fuzzy_score": 53
         }
       ]
     },
@@ -185,23 +197,33 @@
       "missed": [
         {
           "en": "drug",
-          "es_gold": "fármaco"
+          "es_gold": "fármaco",
+          "es_translated": "fármaco",
+          "fuzzy_score": 100
         },
         {
           "en": "hormone",
-          "es_gold": "hormona"
+          "es_gold": "hormona",
+          "es_translated": "hormona",
+          "fuzzy_score": 100
         },
         {
           "en": "indication",
-          "es_gold": "indicio"
+          "es_gold": "indicio",
+          "es_translated": "indicación",
+          "fuzzy_score": 75
         },
         {
           "en": "receptor",
-          "es_gold": "molécula receptora"
+          "es_gold": "molécula receptora",
+          "es_translated": "receptor",
+          "fuzzy_score": 64
         },
         {
           "en": "recurrence",
-          "es_gold": "recidiva"
+          "es_gold": "recidiva",
+          "es_translated": "recurrencia",
+          "fuzzy_score": 53
         }
       ]
     },
@@ -267,23 +289,33 @@
       "missed": [
         {
           "en": "epidermal growth factor receptor",
-          "es_gold": "receptor del factor de crecimiento epidérmico"
+          "es_gold": "receptor del factor de crecimiento epidérmico",
+          "es_translated": "receptor del factor de crecimiento epidérmico",
+          "fuzzy_score": 100
         },
         {
           "en": "hormone",
-          "es_gold": "hormona"
+          "es_gold": "hormona",
+          "es_translated": "hormona",
+          "fuzzy_score": 100
         },
         {
           "en": "kinase",
-          "es_gold": "cinasa"
+          "es_gold": "cinasa",
+          "es_translated": "quinasa",
+          "fuzzy_score": 77
         },
         {
           "en": "kinase inhibitor",
-          "es_gold": "inhibidor de cinasas"
+          "es_gold": "inhibidor de cinasas",
+          "es_translated": "inhibidor de la quinasa",
+          "fuzzy_score": 84
         },
         {
           "en": "receptor",
-          "es_gold": "molécula receptora"
+          "es_gold": "molécula receptora",
+          "es_translated": "receptor",
+          "fuzzy_score": 64
         }
       ]
     },
@@ -385,23 +417,33 @@
       "missed": [
         {
           "en": "drug",
-          "es_gold": "fármaco"
+          "es_gold": "fármaco",
+          "es_translated": "fármaco",
+          "fuzzy_score": 100
         },
         {
           "en": "endocrine",
-          "es_gold": "endocrino"
+          "es_gold": "endocrino",
+          "es_translated": "endocrino",
+          "fuzzy_score": 100
         },
         {
           "en": "hormone",
-          "es_gold": "hormona"
+          "es_gold": "hormona",
+          "es_translated": "hormona",
+          "fuzzy_score": 100
         },
         {
           "en": "indication",
-          "es_gold": "indicio"
+          "es_gold": "indicio",
+          "es_translated": "indicación",
+          "fuzzy_score": 75
         },
         {
           "en": "receptor",
-          "es_gold": "molécula receptora"
+          "es_gold": "molécula receptora",
+          "es_translated": "receptor",
+          "fuzzy_score": 64
         }
       ]
     },
@@ -483,23 +525,33 @@
       "missed": [
         {
           "en": "epidermal growth factor receptor",
-          "es_gold": "receptor del factor de crecimiento epidérmico"
+          "es_gold": "receptor del factor de crecimiento epidérmico",
+          "es_translated": "receptor del factor de crecimiento epidérmico",
+          "fuzzy_score": 100
         },
         {
           "en": "hormone",
-          "es_gold": "hormona"
+          "es_gold": "hormona",
+          "es_translated": "hormona",
+          "fuzzy_score": 100
         },
         {
           "en": "kinase",
-          "es_gold": "cinasa"
+          "es_gold": "cinasa",
+          "es_translated": "quinasa",
+          "fuzzy_score": 77
         },
         {
           "en": "kinase inhibitor",
-          "es_gold": "inhibidor de cinasas"
+          "es_gold": "inhibidor de cinasas",
+          "es_translated": "inhibidor de la quinasa",
+          "fuzzy_score": 84
         },
         {
           "en": "receptor",
-          "es_gold": "molécula receptora"
+          "es_gold": "molécula receptora",
+          "es_translated": "receptor",
+          "fuzzy_score": 64
         }
       ]
     }
