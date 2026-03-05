@@ -78,7 +78,7 @@ NCI dictionary paths (from `match_with_nci.py`):
 
 | File | Description |
 |---|---|
-| `general_MT_benchmarking.py` | Runs **COMET** (`wmt22-cometkiwi-da`, reference-free) and **MetricX-24** (QE mode, lower = better) on all language columns present in a translations file. Scores all languages including `es_nci` automatically. |
+| `scripts/general_MT_benchmarking.py` | Runs **COMET** (`wmt22-cometkiwi-da`, reference-free) and **MetricX-24** (QE mode, lower = better) on all language columns present in a translations file. Scores all languages including `es_nci` automatically. Saves results to `results/<stem>_comet.csv` and `results/<stem>_metricx.csv`. |
 
 ---
 
@@ -93,6 +93,8 @@ Output files follow a naming convention:
 | `*_terminology_eval.json` | NCI term match/miss results |
 | `mcqs_<stem>_<provider>_nN.json` | Generated MCQs |
 | `eval_<stem>_<provider>.csv` | MCQ accuracy per language |
+| `<stem>_comet.csv` | COMET scores per entry and language, plus system-level mean (`all` row) |
+| `<stem>_metricx.csv` | MetricX-24 scores per entry and language, plus mean (`all` row) |
 
 ---
 

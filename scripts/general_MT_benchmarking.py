@@ -40,6 +40,12 @@ for lang in lang_codes:
 print("\nCOMET Scores")
 print(comet_results)
 
+OUTPUT_DIR = "/home/baihesun/LLM_translation_project/results/"
+os.makedirs(OUTPUT_DIR, exist_ok=True)
+stem = os.path.splitext(os.path.basename(JSON_PATH))[0]
+
+comet_results.to_csv(os.path.join(OUTPUT_DIR, f"{stem}_comet.csv"))
+print(f"Saved COMET scores to {stem}_comet.csv")
 
 # ── MetricX-23 ─────────────────────────────────────────────────────────────────
 metricx_results = pd.DataFrame(index=index, columns=lang_codes)
@@ -85,4 +91,5 @@ for lang in lang_codes:
 print("\nMetricX-23 Scores (lower = better)")
 print(metricx_results)
 
-    
+metricx_results.to_csv(os.path.join(OUTPUT_DIR, f"{stem}_metricx.csv"))
+print(f"Saved MetricX scores to {stem}_metricx.csv")
